@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://makex.in/</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://makex.in/</loc></url>
+  <url><loc>https://makex.in/ideas/</loc></url>
+  <url><loc>https://makex.in/ideas/commerce-livelihoods/</loc></url>
+  <url><loc>https://makex.in/ideas/learning-capability/</loc></url>
+  <url><loc>https://makex.in/ideas/human-agent-collaboration/</loc></url>
+  <url><loc>https://makex.in/ideas/shared-capacity-mobility/</loc></url>
+  <url><loc>https://makex.in/ideas/personalized-physical-solutions/</loc></url>
+  <url><loc>https://makex.in/ideas/ai-within-reach/</loc></url>
+  <url><loc>https://makex.in/ideas/systems-for-useful-ai/</loc></url>
 </urlset>
