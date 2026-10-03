@@ -1,0 +1,14 @@
+{
+  "name": "makex-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:css": "node scripts/build.mjs --css",
+    "watch:css": "node --watch --watch-path=src/styles.css scripts/build.mjs --css",
+    "check": "node scripts/check.mjs",
+    "serve": "node scripts/serve.mjs"
+  }
+}
