@@ -86,7 +86,7 @@ A passenger searches.
 
 The two connect.
 
-That simplicity has significant legal, operational and trust advantages.
+That simplicity can offer operational and trust advantages, while legal treatment depends on jurisdiction and implementation.
 
 Dynamic matching introduces more complexity and should not be assumed to be automatically better.
 

@@ -6,7 +6,7 @@ export const slug = text => text.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim
 export const unmark = text => text.replace(/^>\s?/gm, '').replace(/\*\*|`/g, '').replace(/\*([^*]+)\*/g, '$1').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
 export function inlineMarkdown(text) {
   return escape(text)
-    .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|#[^\s)]+)\)/g, '<a href="$2">$1</a>')
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/(?!\/)[^\s)]*|mailto:[^\s)]+|#[^\s)]+)\)/g, '<a href="$2">$1</a>')
     .replace(/\*\*([\s\S]+?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*([^*]+)\*/g, '<em>$1</em>')
     .replace(/`([^`]+)`/g, '<code>$1</code>')

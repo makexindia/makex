@@ -100,7 +100,8 @@ main:focus, section[tabindex="-1"]:focus { outline: none; }
 .idea-card h3 { font-size: 25px; min-height: 62px; margin-bottom: 18px; }
 .idea-thesis { font-size: 16px; line-height: 1.45; min-height: 47px; }
 .idea-question { font-size: 15px; color: var(--muted); margin-bottom: 26px; }
-.idea-detail { margin-top: auto; font-size: 14px; }
+.idea-discovery { margin-top: auto; }
+.idea-detail { font-size: 14px; }
 summary { padding-block: 12px; min-height: 44px; color: var(--accent); font-weight: 600; }
 summary:hover { text-decoration: underline; text-underline-offset: 5px; }
 details[open] > summary { margin-bottom: 12px; }
@@ -108,7 +109,7 @@ details[open] > summary { margin-bottom: 12px; }
 .systems-strip { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) 220px; background: var(--ink); color: var(--on-ink); border: 1px solid var(--line); border-radius: 18px; margin-top: 28px; padding: 38px 42px; }
 .systems-strip > div { position: relative; z-index: 1; }
 .systems-strip h2 { font-size: 32px; margin-bottom: 14px; }
-.systems-strip .eyebrow, .systems-strip summary { color: #88e9be; }
+.systems-strip .eyebrow, .systems-strip summary, .systems-strip .text-link { color: #88e9be; }
 .systems-strip p:not(.eyebrow) { color: var(--ink-muted); }
 .systems-strip .root-motif { width: 400px; height: 400px; right: -110px; bottom: -100px; opacity: .5; color: #99b4a4; }
 .systems-strip .active-path { stroke: #73ddb0; }
@@ -137,6 +138,7 @@ details[open] > summary { margin-bottom: 12px; }
 .evidence-card:nth-child(even) { grid-template-columns: 1.15fr .85fr; }
 .evidence-card:nth-child(even) .evidence-visual { order: 2; border-right: 0; border-left: 1px solid var(--line); }
 .text-link { display: inline-flex; align-items: center; gap: 12px; color: var(--accent); min-height: 44px; font-size: 14px; font-weight: 600; }
+.idea-discovery > .text-link { gap: 6px; }
 .more-experiments { display: flex; justify-content: space-between; gap: 35px; align-items: center; margin-top: 34px; }
 .more-experiments h3 { font-size: 19px; margin-bottom: 5px; }
 .more-experiments p { font-size: 14px; color: var(--muted); }

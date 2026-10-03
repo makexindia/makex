@@ -29,10 +29,10 @@ ${motif}<div class="hero-note" aria-hidden="true"><span class="signal-dot"></spa
 <div class="idea-rail" id="idea-rail" tabindex="0" role="region" aria-label="Six ideas, horizontally scrollable">
 ${ideas.children.map((card,i)=>`<article class="idea-card" id="idea-${site.themes[i]}">
 <div class="card-top">${chips(plain(card.blocks[3]))}${glyph(i)}</div><p class="card-number" aria-hidden="true">0${i+1}</p><h3>${escape(card.title)}</h3><p class="idea-thesis">${inline(card.blocks[0])}</p><p class="idea-question">${inline(plain(card.blocks[1]))}</p>
-<details class="idea-detail"><summary>${inline(plain(card.blocks[4]))}<span class="sr-only"> ${escape(card.title)}</span></summary>${prose([card.blocks[2]])}</details></article>`).join('\n')}
+<div class="idea-discovery"><a class="text-link" href="/ideas/#${site.themes[i]}"><span>${inline(plain(card.blocks[4]).replace(/\s*→$/, ''))}<span class="sr-only"> ${escape(card.title)}</span></span><span aria-hidden="true">→</span></a><details class="idea-detail"><summary>Quick summary<span class="sr-only">: ${escape(card.title)}</span></summary>${prose([card.blocks[2]])}</details></div></article>`).join('\n')}
 </div>
 <aside class="systems-strip" id="systems" aria-labelledby="systems-title"><div>${eyebrow(systems.name)}<h2 id="systems-title">${inline(systems.heading)}</h2>${prose([systems.blocks[0]])}
-<details><summary>${inline(plain(systems.blocks.at(-1)))}</summary><div class="systems-questions">${prose(systems.blocks.slice(1,-1))}</div></details></div>${motif}</aside>
+<a class="text-link" href="/ideas/#systems-for-useful-ai">${inline(plain(systems.blocks.at(-1)).replace(/\s*→$/, ''))} <span aria-hidden="true">→</span></a><details><summary>Questions behind the systems</summary><div class="systems-questions">${prose(systems.blocks.slice(1,-1))}</div></details></div>${motif}</aside>
 </div></section>
 
 <section class="section builds-section" id="builds"><span id="impact" class="legacy-anchor"></span><div class="wrap">${head(builds,'02')}

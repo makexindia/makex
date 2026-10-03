@@ -13,16 +13,42 @@ const read = path => readFile(resolve(root,path),'utf8');
 const html = await read('index.html');
 const slugs=['commerce-livelihoods','learning-capability','human-agent-collaboration','shared-capacity-mobility','personalized-physical-solutions','ai-within-reach','systems-for-useful-ai'];
 assert.deepEqual(articles.map(a=>a.slug),slugs,'Approved article registry');
-const pages=['index.html','ideas/index.html',...slugs.map(s=>`ideas/${s}/index.html`)];
+const pages=['index.html','ideas/index.html','transparency/index.html',...slugs.map(s=>`ideas/${s}/index.html`)];
+const titles=new Set(), descriptions=new Set();
+const stalePublic=/IT Consulting|Startup Incubation|Start a Project|Partner With Us|customer service|Advising Founder|codex-handoff|\.qa\b|localhost|127\.0\.0\.1|test\.makex\.in/i;
 for(const page of pages) {
 const pageHtml=await read(page);
+assert.ok(!stalePublic.test(pageHtml),`Stale identity or development content: ${page}`);
+const title=pageHtml.match(/<title>([^<]+)<\/title>/)?.[1];
+const description=pageHtml.match(/<meta name="description" content="([^"]+)"/ )?.[1];
+assert.ok(title && !titles.has(title),`Missing or duplicate title: ${page}`); titles.add(title);
+assert.ok(description && !descriptions.has(description),`Missing or duplicate description: ${page}`); descriptions.add(description);
+const canonical='https://makex.in/'+page.replace(/index.html$/,'');
+assert.ok(pageHtml.includes(`property="og:url" content="${canonical}"`),'OG URL mismatch');
+assert.ok(pageHtml.includes(`property="og:description" content="${description}"`),'OG description mismatch');
+assert.match(pageHtml,/<meta property="og:title" content="[^"]+"/);
+assert.ok(pageHtml.includes('property="og:image" content="https://makex.in/assets/social/makex-og.png"'));
+assert.ok(pageHtml.includes('property="og:image:type" content="image/png"'));
+assert.ok(pageHtml.includes('property="og:image:width" content="1200"') && pageHtml.includes('property="og:image:height" content="630"'));
+assert.ok(pageHtml.includes('name="twitter:card" content="summary_large_image"'));
+assert.ok(pageHtml.includes('name="twitter:image" content="https://makex.in/assets/social/makex-og.png"'));
+for(const field of ['title','description','image:alt']) {
+  const og=pageHtml.match(new RegExp(`<meta property="og:${field}" content="([^"]+)"`))?.[1];
+  const twitter=pageHtml.match(new RegExp(`<meta name="twitter:${field}" content="([^"]+)"`))?.[1];
+  assert.ok(og && twitter===og,`Social ${field} mismatch: ${page}`);
+}
+assert.ok(pageHtml.includes(`property="og:type" content="${slugs.some(s=>page===`ideas/${s}/index.html`)?'article':'website'}"`));
+assert.ok(pageHtml.includes('href="/transparency/"'),'Every page links to Transparency');
+const pageSchema=JSON.parse(pageHtml.match(/<script type="application\/ld\+json">([\s\S]+?)<\/script>/)[1]);
+assert.ok(!/founder|jobTitle|"Service"|FAQPage|LocalBusiness|ProfessionalService/i.test(JSON.stringify(pageSchema)),'Unsupported schema claims');
 const ids = [...pageHtml.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
 assert.equal(new Set(ids).size,ids.length,'Duplicate HTML/SVG IDs');
 assert.equal((pageHtml.match(/<h1\b/g)||[]).length,1,'Exactly one h1');
 let level=0;
 for (const match of pageHtml.matchAll(/<h([1-6])\b/g)) { const next=Number(match[1]); assert.ok(next<=level+1,'Heading level skip'); level=next; }
-for (const match of pageHtml.matchAll(/(?:href|src)="([^"]+)"/g)) {
+for (const match of pageHtml.matchAll(/(?:href|src|action)="([^"]+)"/g)) {
   const url = new URL(match[1], 'https://makex.in/'+page.replace(/index.html$/,''));
+  assert.ok(['https:','mailto:'].includes(url.protocol),`Unexpected URL protocol: ${url.href}`);
   if (url.origin !== 'https://makex.in') continue;
   let target=resolve(root,'.'+url.pathname);
   if((await stat(target)).isDirectory()) target=join(target,'index.html');
@@ -47,7 +73,19 @@ assert.ok((await stat(resolve(root,'assets/social/makex-og.png'))).isFile(),'Soc
 const socialImage = await readFile(resolve(root,'assets/social/makex-og.png'));
 assert.equal(socialImage.readUInt32BE(16),1200,'Social image width');
 assert.equal(socialImage.readUInt32BE(20),630,'Social image height');
-assert.deepEqual([...((await read('sitemap.xml')).matchAll(/<loc>([^<]+)<\/loc>/g))].map(m=>m[1]),['https://makex.in/','https://makex.in/ideas/',...articles.map(a=>'https://makex.in'+a.path)]);
+assert.deepEqual([...((await read('sitemap.xml')).matchAll(/<loc>([^<]+)<\/loc>/g))].map(m=>m[1]),['https://makex.in/','https://makex.in/ideas/','https://makex.in/transparency/',...articles.map(a=>'https://makex.in'+a.path)]);
+for(const slug of slugs) assert.ok(html.includes(`href="/ideas/#${slug}"`),`Homepage discovery link missing: ${slug}`);
+const transparency=await read('transparency/index.html');
+assert.ok(transparency.includes('UDYAM-UP-58-0090117') && transparency.includes('family-led technology initiative'));
+assert.ok(!html.includes('UDYAM-UP-58-0090117'),'Registration details belong on Transparency');
+assert.ok((await read('robots.txt')).includes('Sitemap: https://makex.in/sitemap.xml'));
+assert.equal((await read('CNAME')).trim(),'makex.in');
+const manifest=JSON.parse(await read('site.webmanifest'));
+assert.equal(manifest.name,'Makex India');
+for(const icon of manifest.icons) assert.ok((await stat(resolve(root,'.'+icon.src))).isFile(),`Missing manifest icon ${icon.src}`);
+for(const file of ['assets/site.css','assets/site.js','assets/reading.css','assets/social/makex-og.svg','site.webmanifest','robots.txt','sitemap.xml','whatsapp/index.html']) assert.ok(!stalePublic.test(await read(file)),`Stale public asset: ${file}`);
+const oldMobility='That simplicity has significant legal, operational and trust advantages.';
+for(const file of ['src/content/articles/shared-capacity-mobility.md','ideas/shared-capacity-mobility/index.html']) assert.ok(!(await read(file)).includes(oldMobility),'Unbounded Mobility wording remains');
 assert.deepEqual((await readdir(resolve(root,'ideas'),{withFileTypes:true})).filter(x=>x.isDirectory()).map(x=>x.name).sort(),[...slugs].sort(),'Exactly seven article routes');
 
 // Compare raw approved paragraphs independently of the Markdown renderer.
@@ -111,7 +149,7 @@ for(const [name, section] of readSections(await read('src/content/homepage.md'))
 // Build in an isolated copy with no handoff. Guard an unrelated public file and
 // all copied compatibility files, then prove deterministic output on a second build.
 const sandbox=await mkdtemp(join(tmpdir(),'makex-build-'));
-for(const path of ['src','scripts','assets','package.json','CNAME','resources','whatsapp','Makex_green.svg','Makex_black.svg']) await cp(resolve(root,path),join(sandbox,path),{recursive:true});
+for(const path of ['src','scripts','assets','package.json','CNAME','.nojekyll','resources','whatsapp','Makex_green.svg','Makex_black.svg','robots.txt','site.webmanifest','favicon.ico','favicon-16x16.png','favicon-32x32.png','apple-touch-icon.png','android-chrome-192x192.png','android-chrome-512x512.png']) await cp(resolve(root,path),join(sandbox,path),{recursive:true});
 await writeFile(join(sandbox,'unrelated-public.txt'),'Preserve this public file.');
 async function files(directory,prefix='') {
   const result=[];
