@@ -1,2 +1,2 @@
-// Runs before CSS. Storage can be unavailable; CSS also follows the system theme.
-(()=>{try{const t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch{}})();
+// Runs before CSS: only an explicit saved Dark choice overrides the light default.
+(()=>{let t='light';try{if(localStorage.getItem('theme')==='dark')t='dark';}catch{}document.documentElement.dataset.theme=t;document.querySelector('meta[name="theme-color"]').content=t==='dark'?'#0d1512':'#f8faf9';})();

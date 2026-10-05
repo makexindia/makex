@@ -5,12 +5,27 @@ import { resolve, join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
+import { runInNewContext } from 'node:vm';
 import { readSections, plain } from './content.mjs';
 import { articles } from '../src/articles.mjs';
 import { parseArticle } from '../src/templates/article.mjs';
 const root = fileURLToPath(new URL('../',import.meta.url));
 const read = path => readFile(resolve(root,path),'utf8');
 const html = await read('index.html');
+// The first paint must depend on saved choice, never on OS appearance.
+const themeInit=await read('src/theme-init.js');
+for(const osDark of [false,true]) for(const [saved,expected] of [[null,'light'],['light','light'],['dark','dark'],['invalid','light'],['unavailable','light']]) {
+  const root={dataset:{}}, themeColor={content:'#f8faf9'};
+  runInNewContext(themeInit,{
+    localStorage:{getItem:()=>{if(saved==='unavailable')throw new Error('Storage unavailable');return saved;}},
+    document:{documentElement:root,querySelector:()=>themeColor},
+    matchMedia:()=>({matches:osDark})
+  });
+  assert.equal(root.dataset.theme,expected,`Theme default: saved=${saved}, OS dark=${osDark}`);
+  assert.equal(themeColor.content,expected==='dark'?'#0d1512':'#f8faf9');
+}
+assert.ok(!/prefers-color-scheme/.test(await read('src/styles.css')),'CSS must not override the light default using OS appearance');
+assert.ok(html.indexOf('dataset.theme=')<html.indexOf('<link rel="stylesheet"'),'Theme selection must precede styles');
 const slugs=['commerce-livelihoods','learning-capability','human-agent-collaboration','shared-capacity-mobility','personalized-physical-solutions','ai-within-reach','systems-for-useful-ai'];
 assert.deepEqual(articles.map(a=>a.slug),slugs,'Approved article registry');
 const pages=['index.html','ideas/index.html','transparency/index.html',...slugs.map(s=>`ideas/${s}/index.html`)];
@@ -18,6 +33,7 @@ const titles=new Set(), descriptions=new Set();
 const stalePublic=/IT Consulting|Startup Incubation|Start a Project|Partner With Us|customer service|Advising Founder|codex-handoff|\.qa\b|localhost|127\.0\.0\.1|test\.makex\.in/i;
 for(const page of pages) {
 const pageHtml=await read(page);
+assert.ok(!/href="\/?notes\/|future-ideas/.test(pageHtml),'Backlog must not be linked from public pages');
 assert.ok(!stalePublic.test(pageHtml),`Stale identity or development content: ${page}`);
 const title=pageHtml.match(/<title>([^<]+)<\/title>/)?.[1];
 const description=pageHtml.match(/<meta name="description" content="([^"]+)"/ )?.[1];
@@ -76,6 +92,9 @@ assert.equal(socialImage.readUInt32BE(20),630,'Social image height');
 assert.deepEqual([...((await read('sitemap.xml')).matchAll(/<loc>([^<]+)<\/loc>/g))].map(m=>m[1]),['https://makex.in/','https://makex.in/ideas/','https://makex.in/transparency/',...articles.map(a=>'https://makex.in'+a.path)]);
 for(const slug of slugs) assert.ok(html.includes(`href="/ideas/#${slug}"`),`Homepage discovery link missing: ${slug}`);
 const transparency=await read('transparency/index.html');
+assert.ok(transparency.includes('id="gratitude"') && transparency.includes('gratitude should become action.'));
+assert.ok(html.includes('href="/transparency/#gratitude"'));
+assert.ok((await read('ideas/shared-capacity-mobility/index.html')).includes('At our Bengaluru home, Lakshmi Didi, who helped us with cooking,'));
 assert.ok(transparency.includes('UDYAM-UP-58-0090117') && transparency.includes('family-led technology initiative'));
 assert.ok(!html.includes('UDYAM-UP-58-0090117'),'Registration details belong on Transparency');
 assert.ok((await read('robots.txt')).includes('Sitemap: https://makex.in/sitemap.xml'));

@@ -802,13 +802,13 @@ An agent runtime could represent this distinction explicitly.
 
 For example:
 
-**experimental capability** — model will reason from scratch.
+**experimental capability**: model will reason from scratch.
 
-**learned capability** — a workflow has succeeded but lacks sufficient validation.
+**learned capability**: a workflow has succeeded but lacks sufficient validation.
 
-**validated capability** — known tests and policies pass.
+**validated capability**: known tests and policies pass.
 
-**restricted capability** — works only within declared conditions.
+**restricted capability**: works only within declared conditions.
 
 That gives orchestration systems a way to prefer reliable machinery before open-ended reasoning.
 
@@ -1034,7 +1034,7 @@ It is the infrastructure logic underneath them.
 
 # What we would like to prototype
 
-## Experiment 1 — Reason once, reuse
+## Experiment 1: Reason once, reuse
 
 Give an agent a recurring structured task.
 
@@ -1060,7 +1060,7 @@ Measure:
 
 cost, latency, failure rate, maintenance effort, behaviour when assumptions change.
 
-## Experiment 2 — Capability router
+## Experiment 2: Capability router
 
 Create several implementations for the same broad task:
 
@@ -1074,7 +1074,7 @@ Escalate when confidence or validation fails.
 
 Test whether the system can reduce model usage without unacceptable quality loss.
 
-## Experiment 3 — Environmental event gateway
+## Experiment 3: Environmental event gateway
 
 Connect several event sources:
 
@@ -1098,7 +1098,7 @@ record provenance.
 
 This tests whether environmental inputs can become composable without granting sensors uncontrolled agency.
 
-## Experiment 4 — Agent provenance chain
+## Experiment 4: Agent provenance chain
 
 Create a task delegated through several actors:
 
@@ -1112,7 +1112,7 @@ through every hop.
 
 Measure what identity information must actually be disclosed at each stage.
 
-## Experiment 5 — Compile repeated agent behaviour
+## Experiment 5: Compile repeated agent behaviour
 
 Give an agent a family of recurring tasks.
 
@@ -1132,7 +1132,7 @@ escalate back to model reasoning.
 
 This tests whether an agent can gradually convert experience into cheaper dependable machinery.
 
-## Experiment 6 — Cache/locality-aware scheduling
+## Experiment 6: Cache/locality-aware scheduling
 
 Create workloads sharing large common context.
 
@@ -1142,7 +1142,7 @@ stable prompt prefixes, warm context, retrieval results, local data.
 
 The experiment asks how far reuse principles can extend across an application pipeline.
 
-## Experiment 7 — Physical action boundary
+## Experiment 7: Physical action boundary
 
 Use a harmless physical prototype.
 

@@ -2,22 +2,21 @@
 (() => {
   const root = document.documentElement;
   const theme = document.querySelector('.theme-toggle');
-  const systemTheme = matchMedia('(prefers-color-scheme: dark)');
-  const dark = () => root.dataset.theme ? root.dataset.theme === 'dark' : systemTheme.matches;
+  const dark = () => root.dataset.theme === 'dark';
   function describeTheme() {
     theme.setAttribute('aria-label', `Switch to ${dark() ? 'light' : 'dark'} theme`);
     theme.title = theme.getAttribute('aria-label');
+    document.querySelector('meta[name="theme-color"]').content = dark() ? '#0d1512' : '#f8faf9';
   }
   theme.addEventListener('click', () => {
     root.dataset.theme = dark() ? 'light' : 'dark';
     try { localStorage.setItem('theme', root.dataset.theme); } catch { /* Session-only preference. */ }
     describeTheme();
   });
-  systemTheme.addEventListener('change', describeTheme);
   window.addEventListener('storage', event => {
-    if (event.key !== 'theme') return;
+    if (event.key !== 'theme' && event.key !== null) return;
     if (event.newValue === 'light' || event.newValue === 'dark') root.dataset.theme = event.newValue;
-    else delete root.dataset.theme;
+    else root.dataset.theme = 'light';
     describeTheme();
   });
   describeTheme();

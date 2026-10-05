@@ -112,11 +112,11 @@ function control(id,c) {
   const execY=c?710:585;
   return svg(id,width,c?1120:1000,
     boundary(4,4,width-8,c?680:552)+label(18,30,'Control plane')+chain(id,names,x,49,w,82)+
-    path(id,c?`M${center} 515H28V684H${center}V${execY-7}`:`M${center} 515V${execY-7}`)+
-    path(id,`M${x+w} 323H${width-16}V${c?552:355}`,'flow-active')+
+    path(id,c?`M${center} 515H28V698H${center}V${execY-7}`:`M${center} 515V${execY-7}`)+
+    path(id,c?`M${x+w} 323H294V543H181V558`:`M${x+w} 323H558V358`,'flow-active')+
     node(c?56:455,c?565:365,c?250:205,'Validated reusable capability','diagram-active',74)+
-    path(id,c?`M306 602h8V${execY+28}H${x+w}`:`M558 439V${execY+28}H${x+w}`,'flow-active')+
-    (c?label(56,666,'Reuse when applicable'):label(455,482,'Reuse when')+label(455,503,'applicable'))+
+    path(id,c?`M181 639V650H294V${execY+28}H${x+w+7}`:`M558 439V457H640V${execY+28}H${x+w+7}`,'flow-active')+
+    (c?label(56,674,'Reuse when applicable'):label(455,482,'Reuse when')+label(455,503,'applicable'))+
     chain(id,['Execution','Validation','Provenance / audit','Learn / compile capability'],x,execY,w,90)+
     path(id,`M${x} ${execY+298}H8V323H${x}`,'flow-optional')+
     label(20,c?1098:973,'Validated learning feeds the registry.'));

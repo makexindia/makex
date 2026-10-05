@@ -186,7 +186,7 @@ Who is approached when the owner cannot respond?
 
 What state does the recipient need in order to continue safely?
 
-> Relevant conversation history, current commitments and pending decisions — not the user's entire personal memory.
+> Relevant conversation history, current commitments and pending decisions, not the user's entire personal memory.
 
 ### Provenance
 
@@ -408,11 +408,11 @@ So responsibility migration should ideally include tests.
 
 For example:
 
-- **historical replay** — could the new system process prior cases correctly?
-- **shadow mode** — can it run alongside the existing workflow without acting?
-- **policy tests** — does it request approval in the situations where approval is required?
-- **failure injection** — what happens when an external tool is unavailable?
-- **rollback** — can responsibility immediately return to the original system?
+- **historical replay**: could the new system process prior cases correctly?
+- **shadow mode**: can it run alongside the existing workflow without acting?
+- **policy tests**: does it request approval in the situations where approval is required?
+- **failure injection**: what happens when an external tool is unavailable?
+- **rollback**: can responsibility immediately return to the original system?
 
 This begins to resemble CI/CD for agentic automation.
 
@@ -593,7 +593,7 @@ It can research quietly.
 
 If clarification is necessary, it asks one relevant person rather than interrupting everyone.
 
-It may temporarily consult an individual's personal agent for availability — subject to permission.
+It may temporarily consult an individual's personal agent for availability, subject to permission.
 
 Then it returns to the group with:
 
@@ -945,21 +945,21 @@ The important part is defining that behavior before failure occurs.
 
 A useful lifecycle might look something like:
 
-**Defined** — the owner establishes purpose and boundaries.
+**Defined**: the owner establishes purpose and boundaries.
 
-**Active** — an agent currently maintains the responsibility.
+**Active**: an agent currently maintains the responsibility.
 
-**Delegated** — execution temporarily moves elsewhere.
+**Delegated**: execution temporarily moves elsewhere.
 
-**Awaiting Human** — a policy boundary requires human judgment.
+**Awaiting Human**: a policy boundary requires human judgment.
 
-**Degraded** — the normal execution environment is unavailable, so fallback rules apply.
+**Degraded**: the normal execution environment is unavailable, so fallback rules apply.
 
-**Suspended** — no permitted actor can proceed safely.
+**Suspended**: no permitted actor can proceed safely.
 
-**Returned** — control moves back to the original owner or agent.
+**Returned**: control moves back to the original owner or agent.
 
-**Closed** — the responsibility no longer exists.
+**Closed**: the responsibility no longer exists.
 
 This is only a thought model.
 
@@ -993,7 +993,7 @@ The open question is where those boundaries should sit.
 
 # What we would like to prototype
 
-## Experiment 1 — Responsibility handoff
+## Experiment 1: Responsibility handoff
 
 Create two deliberately different agent harnesses.
 
@@ -1019,7 +1019,7 @@ Measure:
 - where assumptions broke,
 - whether the owner could understand the handoff.
 
-## Experiment 2 — Shadow migration
+## Experiment 2: Shadow migration
 
 Before Agent B receives authority, let it process the same historical or live events without acting.
 
@@ -1031,7 +1031,7 @@ This would explore whether agent automation can borrow ideas from deployment pra
 
 **shadow traffic · canary rollout · contract testing · rollback.**
 
-## Experiment 3 — Group task request
+## Experiment 3: Group task request
 
 Create a small structured request that can be posted into a trusted group.
 
@@ -1049,7 +1049,7 @@ The objective is not to maximize autonomous task completion.
 
 It is to determine whether software can reduce the coordination burden.
 
-## Experiment 4 — Family coordination agent
+## Experiment 4: Family coordination agent
 
 Give a shared agent access only to deliberately shared resources:
 
@@ -1147,7 +1147,7 @@ The first generation of AI assistants asks:
 
 Persistent agent systems introduce a harder question:
 
-> **What may I continue doing for you when you are not here — and who may safely continue when I cannot?**
+> **What may I continue doing for you when you are not here, and who may safely continue when I cannot?**
 
 That is not only an artificial-intelligence problem.
 

@@ -410,6 +410,12 @@ Incentive design can change system behaviour dramatically, so it should be treat
 
 The same principle applies to logistics.
 
+## An everyday version of piggybacking
+
+At our Bengaluru home, Lakshmi Didi, who helped us with cooking, would sometimes prepare potatoes and dal in the same cooking cycle to save both time and gas. Nothing about either task is unusual. The useful idea is that once heat, vessel capacity and attention are already being used, a second outcome can ride on the same cycle.
+
+That is close to the intuition behind piggyback logistics: before creating a new journey, ask whether something useful can travel with a journey that is already happening.
+
 Most delivery systems optimize dedicated logistics networks.
 
 That is necessary for urgent, predictable and high-volume delivery.
@@ -745,7 +751,7 @@ How can mobility constraints influence matching without requiring users to expos
 How should coordination protocols expose transport type and participant role so local compliance rules can be applied correctly?
 
 ### Measurement
-Does a system genuinely reduce vehicle kilometres, cost or human coordination effort — or merely redistribute them?
+Does a system genuinely reduce vehicle kilometres, cost or human coordination effort, or merely redistribute them?
 
 Those are empirical questions.
 

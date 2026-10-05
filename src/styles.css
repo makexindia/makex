@@ -7,14 +7,6 @@
   --ink: #13271d; --on-ink: #f1f8f3; --ink-muted: #baccc1;
   --mono: ui-monospace, SFMono-Regular, Consolas, monospace;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark; --bg: #0d1512; --surface: #131f19; --surface-2: #192a21;
-    --text: #edf5ef; --muted: #acbfb2; --line: #304338; --line-strong: #698473;
-    --accent: #73ddb0; --accent-soft: #183a2b; --focus: #9abaff;
-    --ink: #172e22; --on-ink: #f1f8f3; --ink-muted: #baccc1;
-  }
-}
 :root[data-theme="dark"] {
   color-scheme: dark; --bg: #0d1512; --surface: #131f19; --surface-2: #192a21;
   --text: #edf5ef; --muted: #acbfb2; --line: #304338; --line-strong: #698473;
@@ -86,6 +78,8 @@ main:focus, section[tabindex="-1"]:focus { outline: none; }
 .section-heading { display: grid; grid-template-columns: 1.1fr .9fr; gap: 85px; align-items: end; margin-bottom: 48px; }
 .section-intro { color: var(--muted); font-size: 16px; }
 .section-intro p { margin-bottom: 10px; }
+.gratitude-note { margin-top: 24px; font-size: 14px; line-height: 1.7; }
+.gratitude-note a { display: inline-block; padding-block: 8px; }
 .rail-toolbar { display: flex; align-items: center; justify-content: space-between; min-height: 48px; margin-bottom: 18px; }
 .rail-hint { font: 12px var(--mono); color: var(--muted); margin: 0; }
 .rail-controls { display: flex; gap: 9px; }
@@ -177,7 +171,6 @@ details[open] > summary { margin-bottom: 12px; }
 .banyan-note p { display: inline; font-size: 15px; color: var(--muted); }
 .banyan-note p::after { content: ' '; }
 [data-theme="dark"] .banyan-monochrome { filter: invert(1); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .banyan-monochrome { filter: invert(1); } }
 .future-section { background: var(--surface); border-block: 1px solid var(--line); }
 .future-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }
 .future-copy { color: var(--muted); font-size: 16px; }
@@ -217,6 +210,11 @@ textarea { resize: vertical; display: block; }
 .footer-small summary { color: var(--muted); font-weight: 400; }
 .registration { max-width: 280px; padding: 15px; border: 1px solid var(--line); border-radius: 7px; }
 .registration p { margin-bottom: 8px; }
+@media (min-width: 821px) {
+  .section-heading, .future-layout { align-items: start; }
+  /* Align narrative copy with the heading below its eyebrow. */
+  .section-heading > .section-intro, .future-layout > .future-copy { padding-top: 44px; }
+}
 @media (max-width: 1100px) {
   #primary-nav { gap: 13px; }
   .header-inner { gap: 14px; }

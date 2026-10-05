@@ -6,7 +6,7 @@ const arrow = '<span aria-hidden="true">↗</span>';
 const link = (text, href, cls='text-link') => `<a class="${cls}" href="${href}">${inline(plain(text).replace(/\s*→$/, ''))} ${arrow}</a>`;
 const eyebrow = text => `<p class="eyebrow">${escape(text)}</p>`;
 const chips = text => `<div class="chips">${text.split(' + ').map(x=>`<span class="status-chip">${escape(x)}</span>`).join('')}</div>`;
-const head = (s,number) => `<div class="section-heading"><div>${eyebrow(number+' / '+s.name)}<h2>${inline(s.heading)}</h2></div><div class="section-intro">${prose(s.blocks)}</div></div>`;
+const head = (s,number,extra='') => `<div class="section-heading"><div>${eyebrow(number+' / '+s.name)}<h2>${inline(s.heading)}</h2></div><div class="section-intro">${prose(s.blocks)}${extra}</div></div>`;
 
 export function homepage(sections, site) {
   const get = name => { const result = sections.get(name); if(!result) throw new Error(`Missing content: ${name}`); return result; };
@@ -50,7 +50,7 @@ ${ideas.children.map((card,i)=>`<article class="idea-card" id="idea-${site.theme
 
 <section class="section multiply-section"><div class="wrap">${eyebrow(multiply.name)}<h2>${inline(multiply.heading)}</h2><ul class="potential-examples">${multiply.blocks.slice(0,6).map(x=>`<li>${inline(x)}</li>`).join('')}</ul><div class="multiply-close">${prose(multiply.blocks.slice(6))}</div></div></section>
 
-<section class="section" id="people"><span id="team" class="legacy-anchor"></span><div class="wrap">${head(people,'04')}<div class="people-grid">${people.children.slice(0,3).map((person,i)=>`<article class="person"><img src="/assets/img/${site.people[i].image}.jpg" width="360" height="360" alt="${escape(person.title)}" loading="lazy" decoding="async"><h3>${escape(person.title)}</h3><p class="person-role">${inline(plain(person.blocks[0]))}</p><div class="person-description">${prose(person.blocks.slice(1,-1))}</div>${link(person.blocks.at(-1),site.people[i].linkedin)}</article>`).join('')}</div>
+<section class="section" id="people"><span id="team" class="legacy-anchor"></span><div class="wrap">${head({...people,blocks:people.blocks.slice(0,-2)},'04',`<div class="gratitude-note">${prose([people.blocks.at(-2)])}<a href="/transparency/#gratitude">${inline(plain(people.blocks.at(-1)))}</a></div>`)}<div class="people-grid">${people.children.slice(0,3).map((person,i)=>`<article class="person"><img src="/assets/img/${site.people[i].image}.jpg" width="360" height="360" alt="${escape(person.title)}" loading="lazy" decoding="async"><h3>${escape(person.title)}</h3><p class="person-role">${inline(plain(person.blocks[0]))}</p><div class="person-description">${prose(person.blocks.slice(1,-1))}</div>${link(person.blocks.at(-1),site.people[i].linkedin)}</article>`).join('')}</div>
 <div class="banyan-note"><img class="banyan-monochrome" src="/Makex_black.svg" width="104" height="108" alt="" loading="lazy" decoding="async"><div><h3>${people.children[3].title}</h3>${prose(people.children[3].blocks)}</div></div></div></section>
 
 <section class="section future-section"><div class="wrap future-layout"><div>${eyebrow('05 / '+future.name)}<h2>${inline(future.heading)}</h2></div><div class="future-copy">${prose(future.blocks)}</div></div></section>

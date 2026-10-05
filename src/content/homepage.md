@@ -16,7 +16,7 @@ Ideas · Builds · Approach · People · Writing
 
 ## Technology for things that should work better.
 
-We explore and prototype practical technology for everyday life — making useful capabilities easier to discover, access, coordinate and personalize.
+We explore and prototype practical technology for everyday life, making useful capabilities easier to discover, access, coordinate and personalize.
 
 From local commerce and learning to agent systems, mobility, personalized fabrication and resource-efficient AI.
 
@@ -40,7 +40,7 @@ Some begins as a question.
 
 Some stays an experiment.
 
-We are interested in problems where useful capability already exists — in people, businesses, devices or infrastructure — but remains difficult to access or coordinate.
+We are interested in problems where useful capability already exists (in people, businesses, devices or infrastructure) but remains difficult to access or coordinate.
 
 ### Commerce & Livelihoods
 
@@ -324,6 +324,10 @@ We have different strengths and professional paths, but share an interest in pra
 
 We prefer to describe the work we contribute rather than force formal startup titles onto it.
 
+We are here because many people invested in us, often without expecting anything back. We see Makex as one small way to carry that forward.
+
+**Read our note of gratitude →**
+
 ### Lakshay Goel
 
 **Emerging technology & applications**
@@ -396,7 +400,7 @@ The immediate goal is simpler:
 
 We are interested in practical problems that are easy to ignore but difficult to solve well at scale.
 
-If something around you repeatedly feels unnecessarily difficult — in commerce, learning, coordination, mobility, accessibility, computing or another everyday system — we would be interested in hearing about it.
+If something around you repeatedly feels unnecessarily difficult (in commerce, learning, coordination, mobility, accessibility, computing or another everyday system), we would be interested in hearing about it.
 
 You do not need a startup pitch.
 

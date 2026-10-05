@@ -13,7 +13,7 @@ Yet neither knows about the other.
 
 The product is physically available but digitally absent.
 
-Modern commerce has become exceptionally good at finding things that have already entered a digital catalogue. It is much less effective at finding supply that exists outside those catalogues — especially fragmented inventory and capability belonging to small local businesses.
+Modern commerce has become exceptionally good at finding things that have already entered a digital catalogue. It is much less effective at finding supply that exists outside those catalogues, especially fragmented inventory and capability belonging to small local businesses.
 
 At Makex, we are interested in that missing layer.
 
@@ -113,7 +113,7 @@ That is a much smaller onboarding problem.
 
 We think merchant digitization can be progressive rather than binary.
 
-### Level 1 — Basic presence
+### Level 1: Basic presence
 
 A merchant might provide little more than:
 
@@ -127,7 +127,7 @@ That alone may be sufficient to answer:
 
 > *Who nearby might plausibly sell this?*
 
-### Level 2 — Indicative presence
+### Level 2: Indicative presence
 
 The next step could be a lightweight snapshot of the business rather than a perfect live catalogue.
 
@@ -165,7 +165,7 @@ The exact implementation is less important than the principle:
 
 Multimodal and multilingual AI may make this increasingly practical.
 
-### Level 3 — Live interaction
+### Level 3: Live interaction
 
 Only when a buyer has a sufficiently specific need does exact availability matter.
 
@@ -345,7 +345,7 @@ does not automatically mean:
 
 A discovery system can first return potential sellers from snapshots or lightweight representations.
 
-The buyer — or an authorized buying agent acting under an explicit policy — can then decide whether a live request should be sent.
+The buyer (or an authorized buying agent acting under an explicit policy) can then decide whether a live request should be sent.
 
 This is closer to existing human behaviour.
 
@@ -836,7 +836,7 @@ And do it in a way that recognizes a reality often lost in digital transformatio
 
 > **people and businesses do not all begin from the same level of technology, education, capital or digital confidence.**
 
-If the system can meet participants where they are — instead of demanding they first become sophisticated enough for the system — then local commerce may gain something more useful than another marketplace.
+If the system can meet participants where they are, instead of demanding they first become sophisticated enough for the system, then local commerce may gain something more useful than another marketplace.
 
 It may gain a bridge.
 

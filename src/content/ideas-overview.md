@@ -4,7 +4,7 @@
 
 Makex is a family-led technology initiative exploring practical problems that sit between existing systems.
 
-We are interested in situations where capability already exists — in people, businesses, devices, infrastructure or emerging technology — but remains difficult to discover, combine or use.
+We are interested in situations where capability already exists (in people, businesses, devices, infrastructure or emerging technology) but remains difficult to discover, combine or use.
 
 Some of the work below has been built.
 
@@ -30,7 +30,7 @@ Our earlier experiments started with the simplest version of that problem: helpi
 
 Those experiments exposed a larger question.
 
-Instead of demanding complete digitization first, could a business begin with only a location, category and indicative presence — perhaps built conversationally from text, voice and photographs?
+Instead of demanding complete digitization first, could a business begin with only a location, category and indicative presence, perhaps built conversationally from text, voice and photographs?
 
 Buyer demand could then progress from discovery to selected live enquiries only with explicit authorization, while search expands progressively instead of broadcasting requests to every merchant.
 
@@ -168,7 +168,7 @@ It was to connect capabilities that normally live apart:
 
 Flexible materials such as TPU, increasingly accessible digital fabrication and AI-assisted technical exploration make such workflows more plausible.
 
-The research question is not whether customized footwear already exists — it does.
+The research question is not whether customized footwear already exists; it does.
 
 It is whether the capability can be safely **unbundled**, allowing specialist knowledge to remain specialist while fabrication and integration become more geographically distributed.
 
