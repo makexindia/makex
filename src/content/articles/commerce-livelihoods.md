@@ -145,17 +145,11 @@ Services offered.
 
 This representation does not necessarily need to be maintained through spreadsheets and dashboards.
 
-A merchant could talk to an assistant in their own language.
+A merchant might begin with “I sell fruit,” alongside a location and contact preference. Later, photographs of the stall or a voice message in their own language could help the node suggest more specific categories for the merchant to confirm or correct.
 
-They might photograph shelves.
+Refinement could also work in the other direction. The node could occasionally ask whether the business normally handles a need such as “two dozen bananas” or “a mixed-fruit basket.” A conversation, a simple choice or a clearly labelled sample enquiry could help establish what the merchant offers. The interface remains an experiment; these optional interactions should be easy to skip and never mistaken for real customer orders.
 
-Send voice messages.
-
-Answer a few questions.
-
-Correct what the system inferred incorrectly.
-
-The system could iteratively turn those interactions into structured merchant data.
+Merchant-confirmed answers could improve future matching without requiring a complete catalogue. What a business usually sells would remain distinct from what it has in stock today.
 
 We experimented with a prompt template and photographs of a store and its products to generate an initial indicative catalogue, which could then be checked and refined. This was a starting representation, not verified quantities, current prices or live stock.
 
