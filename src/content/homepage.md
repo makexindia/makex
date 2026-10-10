@@ -48,7 +48,7 @@ We are interested in problems where useful capability already exists (in people,
 
 **Can a local business become discoverable before becoming fully digital?**
 
-Lightweight merchant presence, multilingual onboarding, demand-driven discovery and interoperable commerce.
+Supporting local livelihoods through lightweight merchant presence, multilingual onboarding, demand-driven discovery and interoperable commerce.
 
 `BUILT + EXPLORING`
 

@@ -22,21 +22,19 @@ Anchor: `commerce-livelihoods`
 
 ## Can local supply become discoverable before the local business becomes fully digital?
 
-A surprising amount of local commerce remains invisible online.
+Can better discovery help people remain viable independent business owners? Our primary focus is smaller cities and towns, including Tier-2 and Tier-3 markets.
 
 A shop may have exactly what someone nearby needs while having no searchable inventory, ecommerce catalogue or digital advertising operation.
 
-Our earlier experiments started with the simplest version of that problem: helping a small office canteen become easier to discover through a lightweight digital menu and direct ordering, followed by a technical experiment in extremely low-cost multi-merchant storefronts.
+Our recent implementation experiments addressed a simple version of that problem: helping a small office canteen become easier to discover through a lightweight digital menu and direct ordering, followed by a technical experiment in extremely low-cost multi-merchant storefronts.
 
-Those experiments exposed a larger question.
+Those experiments helped refine a concern Vishal first explored personally in 2014.
 
 Instead of demanding complete digitization first, could a business begin with only a location, category and indicative presence, perhaps built conversationally from text, voice and photographs?
 
-Buyer demand could then progress from discovery to selected live enquiries only with explicit authorization, while search expands progressively instead of broadcasting requests to every merchant.
+Locally operated nodes could coordinate discovery within a city or trading area. Buyer-authorized enquiries would seek confirmation from selected businesses, with searches extending to neighbouring nodes only with permission.
 
-The objective is not necessarily another marketplace.
-
-It is to explore whether technology can make distributed local economic capability more legible while preserving direct relationships, merchant choice and compatibility with emerging open-commerce systems.
+The aim is to support local livelihoods while preserving direct relationships, merchant choice and compatibility with open-commerce systems. The wider network and its livelihood benefits remain hypotheses to test.
 
 **Built:** Local canteen digitization, lightweight storefront architecture
 

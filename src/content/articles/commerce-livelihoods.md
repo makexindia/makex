@@ -5,23 +5,21 @@
 
 ### What if being nearby became an advantage again?
 
-A surprising amount of commerce is invisible.
+A city can become easier to buy from while becoming harder to earn a living in through an independent business. Our concern is whether existing shops and service providers can remain viable as discovery, ordering and delivery become increasingly coordinated through digital systems.
 
-A shop may have exactly the product someone needs, sitting a few streets away. The buyer may be ready to purchase it immediately. The seller may even be willing to offer a competitive price.
+Local businesses already hold inventory, knowledge, skills and customer relationships. But proximity offers less protection when a platform can also position inventory nearby, for example in dark stores, and deliver quickly. Customers gain convenience; existing businesses need practical ways to offer it too.
 
-Yet neither knows about the other.
+We are exploring locally operated commerce nodes for a city, district or other trading area. A node would help businesses become discoverable and respond to relevant demand without requiring complete digital catalogues at the outset. Nodes could cooperate when a need extends beyond the local area and the buyer authorizes a wider search.
 
-The product is physically available but digitally absent.
+Our primary focus is smaller cities and towns, including Tier-2 and Tier-3 markets, where independent shops and service providers are important sources of livelihood. The system should work for merchants with limited formal education, digital confidence or time for catalogue maintenance, while recognizing the product knowledge and customer relationships they already possess. Participation should be possible through familiar language, voice, photographs and simple responses.
 
-Modern commerce has become exceptionally good at finding things that have already entered a digital catalogue. It is much less effective at finding supply that exists outside those catalogues, especially fragmented inventory and capability belonging to small local businesses.
+We are particularly concerned about markets where a loss of local business viability could narrow the opportunities to own a business, employ others and build a livelihood close to home.
 
-At Makex, we are interested in that missing layer.
+The hypothesis is that shared discovery and coordination could improve the viability of independent local businesses. Whether it can do so at manageable participation costs remains to be tested. The prototypes described below were built; the wider federated system remains exploratory.
 
-Not necessarily another marketplace.
+A shop may have exactly the product someone needs, sitting a few streets away. The buyer may be ready to purchase it immediately. Yet neither knows about the other. The product is physically available but digitally absent.
 
-Not another merchant dashboard that assumes every shopkeeper wants to become an ecommerce operator.
-
-A smaller question comes first:
+That brings us to the practical question behind this work:
 
 > **Can local supply become meaningfully discoverable before the local business becomes fully digital?**
 
@@ -33,51 +31,53 @@ For us, local commerce is not an abstract market category.
 
 One of Makex's contributors, Vishal, grew up spending long days during casual childhood visits to his father's consumer-electronics and appliance shop in a Tier-2 Indian city.
 
-A shop was more than shelves and inventory.
-
 Customers returned over years. People asked for advice before making purchases. Appliances and accessories were sometimes repaired rather than immediately replaced. Festive demand could transform the physical market. Relationships became part of the business infrastructure.
 
-The shop also had a repairman who handled electrical and electronics repairs.
-
-One incident stayed with Vishal.
+The shop also had a repairman who handled electrical and electronics repairs. One incident stayed with Vishal.
 
 When he was eight, a customer arrived with a television remote that was not working while the repairman was unavailable. The customer's child was upset because the television could not be used. Vishal found a suitable battery-contact piece from one of his own broken toys and used it to get the remote working again.
 
-It was a tiny repair.
-
-But it contained several things that still shape how we think about technology:
+It was a tiny repair. But it contained several things that still shape how we think about technology:
 
 **understand the actual problem, use what is already available, restore usefulness with the smallest practical intervention, and remember that there is a person on the other side of the system.**
 
-Local businesses have traditionally operated through a similar combination of proximity, practical knowledge, relationships and adaptation.
+Local businesses have traditionally operated through a similar combination of proximity, practical knowledge, relationships and adaptation. Digital participation asks them to take on new work: catalogues, inventory updates, interfaces, advertising and online fulfilment. Time, language and digital confidence can all be barriers, especially before the effort produces useful demand.
 
-What changed was the information environment around them.
+### Why local business ownership matters to me
 
-First ecommerce made enormous remote catalogues searchable.
+*Personal note by Vishal*
 
-Then quick commerce made a subset of inventory available almost immediately.
+I began exploring local-commerce pods in 2014, while studying for my master's. This was a personal effort outside my academic research. The notes were rough, and the work did not become a sustained project. But the concern was already clear to me: how could the businesses in a city become easier to discover and buy from, with local delivery and cooperation between pods?
 
-Convenience improved dramatically for consumers.
+That concern came from our family's electronics and appliance shop. In 2014–15, sales were declining, although the shop was not loss-making. Some customers would examine a product in the store, then purchase it online when a discount appeared. I worried about where that trend could lead.
 
-But the neighbourhood business often remained exactly where it had always been:
+Delivery from distant warehouses often took several days. I thought local availability and quick delivery could give nearby businesses a practical advantage, if customers could discover what those businesses already had. I also worried that this advantage would diminish if large competitors brought their inventory closer to buyers.
 
-**physically close, economically useful and digitally difficult to see.**
+Quick commerce has since reached our city. In our local market, I now see competitive pressure extending beyond electronics to general retailers too. The concern about nearby platform inventory is no longer only a possibility I imagined in those early notes.
 
-A shopkeeper may have spent decades learning products, customers, suppliers, repairs and selling.
+In recent years, the shop has operated at a loss. It employs two people with families to support, and funds from other sources help keep it running. This experience has made me conscious of the difference between a business remaining open and a business providing a sustainable livelihood.
 
-The new competitive requirement suddenly includes a very different skill set:
+Customers have good reasons to choose online platforms. Price, convenience, selection and reliable delivery matter. A local business has to offer something useful in return for a customer's choice.
 
-structured catalogues, digital inventory, ecommerce interfaces, advertising, ranking algorithms, compliance workflows and online fulfilment.
+The wider concern is the range of livelihoods available in smaller cities. Can people continue to own shops, develop services, employ others and build something of their own? Our shop's experience does not establish what is happening to every local market, but it explains why I keep returning to this question.
 
-Time is one barrier.
+The current proposal has developed considerably since those early notes. AI tools have helped me express and organize the present article. The concern behind it, and my personal work on local-commerce pods, began much earlier.
 
-Education and digital comfort can be another.
+---
 
-Language can be another.
+# A local commerce pod
 
-The economic benefit of going digital may be unclear until business actually arrives through the digital channel.
+A **local commerce pod** is a proposed node serving a city, district or practical trading area. Think of a local directory that can help answer an availability enquiry. A buyer describes what they need; relevant nearby businesses can confirm what they have, show it and offer terms.
 
-We do not believe every small merchant should first have to become a technology company in order to remain economically visible.
+The immediate goal is to find inventory within reach, perhaps for pickup the same day. An item missing from the apps serving a neighbourhood may still be available elsewhere in the city. Searching across participating local businesses could uncover those options. A listing or indicative snapshot suggests who might help; a seller still needs to confirm current availability.
+
+The node first returns possible sellers without sending a live request. The buyer then chooses whom to contact or authorizes a bounded search. Merchants can respond manually or use rules, inventory software or an agent. Responses may include availability, price, offer validity, merchant identity, product details, supporting evidence and fulfilment options.
+
+If local options do not meet the need, the buyer can explicitly authorize a search through neighbouring or other nodes. Replies return through the network. Pickup or delivery can be agreed separately.
+
+The node's role is to make local capability discoverable and coordinate relevant communication. It need not own the inventory or require a complete database of every item. We want to test how much of this can run on modest infrastructure. Its operating costs, including human support, would still need to be covered.
+
+The proposed flow below separates possible availability, live confirmation and agreement. It is an operating model to test, not a claim that the complete system exists today.
 
 ---
 
@@ -157,7 +157,7 @@ Correct what the system inferred incorrectly.
 
 The system could iteratively turn those interactions into structured merchant data.
 
-We experimented earlier with this idea through prompt-guided catalogue generation: using a small amount of merchant information to create an initial storefront representation that could then be refined.
+We experimented with a prompt template and photographs of a store and its products to generate an initial indicative catalogue, which could then be checked and refined. This was a starting representation, not verified quantities, current prices or live stock.
 
 The exact implementation is less important than the principle:
 
@@ -189,9 +189,7 @@ The discovery layer should not require all merchants to reach the same level of 
 
 # Our first experiments were catalogue-first
 
-Our earliest work did not begin with this full architecture.
-
-It started with a much simpler real-world problem.
+Our recent implementation work began with catalogue-first experiments. These prototypes did not implement the full architecture described here. They started with a much simpler real-world problem.
 
 ## A real canteen digitization pilot
 
@@ -245,121 +243,33 @@ That led to the larger question:
 
 # Demand-first discovery
 
-Suppose a buyer needs something but does not know which local businesses sell it.
+Suppose a buyer needs something but does not know which local businesses sell it. Broadcasting the request to every merchant would turn discovery into an interruption for the whole market.
 
-The obvious design would be:
-
-> broadcast the request to every merchant.
-
-That would be a terrible system.
-
-A discovery network should reduce noise, not manufacture it.
-
-Instead, the first layer can work from merchant presence and indicative snapshots.
-
-The system first asks:
+The first layer can instead work from merchant presence and indicative snapshots. It considers the requested category and exact requirements, geographical relevance and any previous merchant relationship to identify possible sellers.
 
 > **Who might plausibly satisfy this request?**
 
-Only then does it ask:
-
-> **Who should actually receive the live demand?**
-
-This creates a natural funnel.
-
-**Buyer intent**  
-↓  
-**category / semantic interpretation**  
-↓  
-**geographical relevance**  
-↓  
-**merchant snapshot / previous relationship**  
-↓  
-**candidate sellers**  
-↓  
-**buyer authorization**  
-↓  
-**live request**  
-↓  
-**offers**
-
-The majority of queries may therefore never interrupt a merchant.
+That is a different question from deciding who should receive a live enquiry. Passive searches can return candidates without interrupting a merchant. Only an authorized enquiry asks sellers to spend time confirming availability.
 
 ---
 
 # Discovery should not become merchant spam
 
-There are several useful ways the buyer can proceed after potential sellers are identified.
+A buyer may select one merchant, several merchants, or explicitly authorize a broader search. Within that scope, enquiries could begin with preferred merchants, then nearby high-confidence matches, and widen only when needed.
 
-They may select **one merchant**, just as they might physically walk into one shop.
-
-They may select **several merchants** and ask each for availability.
-
-They may explicitly authorize a broader discovery request when there is no obvious preference.
-
-That broader search does not need to happen all at once.
-
-A useful analogy is driver discovery in ride-hailing systems.
-
-When a suitable provider is not immediately found, discovery can expand progressively.
-
-A local-commerce request might begin with:
-
-**preferred merchants**
-
-then, if unsuccessful:
-
-**high-confidence nearby matches**
-
-then:
-
-**a slightly wider geographical or category radius**
-
-then:
-
-**adjacent local commerce areas**
-
-rather than broadcasting city-wide demand immediately.
-
-The exact algorithm is an implementation question.
-
-The principle is:
+Moving into an adjacent commerce area requires the buyer's authorization, either given at that point or within an explicit search policy. A failed local search should not silently expose the request to an unlimited network.
 
 > **Expand discovery only as far as necessary to fulfil the intent.**
 
-This makes the network more usable for sellers and more efficient for buyers.
+The exact routing algorithm remains an implementation question. The purpose is to protect merchant attention while helping buyers obtain a useful response.
 
 ---
 
 # The buyer should authorize the transition from discovery to demand
 
-This boundary is important.
+A search for “Where might I find this?” is not permission to notify every possible merchant. The buyer, or an authorized agent acting within an explicit policy, should decide when a live request is sent and how widely it may travel.
 
-A user searching:
-
-> Where might I find this?
-
-does not automatically mean:
-
-> Tell every possible merchant that I am trying to buy this.
-
-A discovery system can first return potential sellers from snapshots or lightweight representations.
-
-The buyer (or an authorized buying agent acting under an explicit policy) can then decide whether a live request should be sent.
-
-This is closer to existing human behaviour.
-
-A person discovers three appliance shops.
-
-Then decides:
-
-**visit one  
-call one  
-call several  
-ask a friend  
-or broaden the search.**
-
-The platform removes search friction without removing human choice.
+Participants should be able to limit the personal and contact information they disclose until they choose to share more, subject to what an agreed transaction needs. The platform should reduce repeated calls and irrelevant enquiries without removing the option of a direct conversation when that is useful.
 
 ---
 
@@ -395,41 +305,21 @@ A larger merchant might automate almost everything.
 
 Both should remain valid participants.
 
+Buyer convenience should not require sellers to hold stock indefinitely or spend unlimited unpaid time on enquiries. A small, optional reservation amount could be worth testing after availability and terms are confirmed. Any such arrangement would need a clear hold period, cancellation and refund terms, including what happens if the seller cannot fulfil. An enquiry should not itself create a charge.
+
 ---
 
-# A local commerce pod
+# Communication that can be referred back to
 
-One way we think about this is as a **local commerce pod**.
+Direct communication can help a buyer assess a seller's response. Current photos, a live video view or an acknowledged quote may help establish what is being offered. An indicative listing, a seller's confirmation and a completed purchase are different levels of evidence.
 
-A pod does not necessarily mean one platform owning a complete database of every item in an area.
+We envisage a communication channel that lets participants control what they disclose and preserve a verifiable record of offers and agreed terms. The node would retain exchanges only for a disclosed, limited period, while either party could export relevant history for a dispute handled outside the platform.
 
-It is closer to an economic event domain.
+The design goal is to make later alteration detectable and identify which participant acknowledged which terms. The mechanism, retention period and verification process remain open. This would preserve evidence of an exchange; it would not guarantee the condition of the goods or prevent someone from disputing what happened.
 
-A need appears:
+A physical business that a buyer can visit offers another way to inspect goods, ask questions and raise concerns. That visibility can support accountability, although public access alone does not ensure appropriate storage, expiry checks or safe handling. Fulfilment history and reputation may also help, provided participants can challenge incorrect records and seek appropriate recourse when a transaction goes wrong.
 
-> Someone here is trying to find X.
-
-The system first determines which local capability may be relevant.
-
-If the buyer authorizes live discovery, that need progresses through an appropriately bounded set of merchants.
-
-Relevant sellers can respond.
-
-Responses may eventually contain:
-
-**availability  
-price  
-offer validity  
-merchant identity  
-product details  
-authenticity evidence  
-fulfilment options**
-
-The buyer or buyer agent compares them and decides what happens next.
-
-The platform's first job is therefore not to operate the merchant's business.
-
-Its first job is to make previously invisible local capability **legible**.
+A simple channel for enquiries, confirmation and agreement should be useful before elaborate payment or settlement infrastructure becomes necessary.
 
 ---
 
@@ -545,23 +435,7 @@ A lightweight discovery layer should therefore minimize the information and econ
 
 Where possible, it should **connect parties rather than permanently intermediate between them.**
 
-After discovery, buyer and seller may continue through:
-
-**direct pickup**
-
-**WhatsApp**
-
-**telephone**
-
-**merchant delivery**
-
-**a third-party logistics provider**
-
-**an open commerce checkout**
-
-**a trusted local human courier**
-
-The discovery infrastructure need not own the entire transaction lifecycle.
+Parties may choose to continue outside the discovery channel. They should understand which exchanges remain in its record and preserve agreed terms before moving elsewhere. Pickup, payment and delivery can be arranged independently; the discovery infrastructure need not own the entire transaction lifecycle.
 
 ---
 
@@ -627,25 +501,23 @@ That can be measured.
 
 The larger economic claims should follow evidence.
 
+The same network could help businesses notice needs worth investigating. Aggregated enquiries that produced no confirmed match could reveal recurring gaps without exposing buyers or private conversations. A separate, voluntary public request board could let buyers express interest in a product, perhaps linking to a newly launched item to specify what they mean. These would be signals to investigate before acquiring stock: an unanswered enquiry does not prove local absence, and expressed interest is not a purchase commitment.
+
 ---
 
 # Fulfilment does not have to belong to the marketplace
 
-Discovery and fulfilment are often bundled together.
+Finding an item and arranging its delivery are separate problems. The first useful outcome might simply be a confirmed item that the buyer can collect from a nearby shop.
 
-They do not always need to be.
+Existing services illustrate some of these choices. BB Daily describes subscriptions and one-off purchases with next-morning delivery, while BigBasket publishes scheduled delivery slots.
 
-A buyer may walk to the shop.
+Decathlon's Reserve and Collect process asks customers to wait for a readiness notification before visiting the store. It also describes a warehouse-delivery fallback when shelf stock is unavailable, illustrating why an order and confirmed local availability are different things.
 
-The merchant may already deliver locally.
+These examples demonstrate scheduled delivery and confirmation before collection, rather than establish the economics of our proposed network. For some purchases, fulfilling the requested basket within an acceptable window may matter more than the fastest arrival of any one item. That preference is something to test with buyers.
 
-A logistics provider may be hired.
+The merchant may already deliver locally, or the parties may choose an independent delivery provider. Local gig workers could potentially offer this service, but their participation, costs and responsibilities would need to be established. A courier network should not be assumed to exist merely because workers are nearby.
 
-Someone making another trip may eventually carry a non-urgent item.
-
-Different needs can tolerate different fulfilment models.
-
-This becomes especially interesting when local commerce pods are adjacent.
+Someone making another trip may eventually carry a non-urgent item. Different needs can tolerate different fulfilment models. For now, we leave the delivery arrangement open rather than making consolidated logistics a prerequisite for useful discovery.
 
 ---
 
@@ -678,9 +550,13 @@ It raises a broader question:
 
 A local pod unable to fulfil a request might progressively widen the search to an adjacent pod.
 
-The buyer's agent might explicitly authorize that expansion.
+The buyer, or an agent acting within the buyer's explicit policy, would need to authorize that expansion.
 
 Fulfilment could then be negotiated independently.
+
+Local nodes could handle representation, support and routing for their trading areas while sharing rules for interoperability, consent and transparent participation. The analogy is local discretion within common rules: each area can respond to its circumstances and cooperate with others. It does not require exclusive territories or a buyer being tied to one operator.
+
+Local operation does not automatically ensure fairness. Operator accountability, sustainable costs and the ability to change providers remain design questions.
 
 This remains exploratory.
 
@@ -690,43 +566,9 @@ But it is the kind of systems question that becomes visible when commerce is tho
 
 # What might a mature merchant journey look like?
 
-The model need not force every merchant toward the same endpoint.
+The participation diagram describes possible stages, not a compulsory upgrade path. A merchant may begin with a basic presence and manual replies, adopt rules or inventory-connected responses when useful, and eventually expose a standards-compatible commerce interface.
 
-A possible progression is:
-
-**Offline business**
-
-↓
-
-**Basic digital presence**
-
-↓
-
-**AI-assisted indicative snapshot**
-
-↓
-
-**Buyer-authorized live enquiries**
-
-↓
-
-**Rules-based response**
-
-↓
-
-**Inventory-connected automation**
-
-↓
-
-**Merchant agent**
-
-↓
-
-**Open commerce / agent protocol integration**
-
-A merchant can stop anywhere that creates sufficient value.
-
-The network should adapt to business maturity rather than making technological maturity the admission ticket.
+A merchant can stop anywhere that creates sufficient value. The network should adapt to business maturity rather than making technological maturity the admission ticket.
 
 ---
 
@@ -780,6 +622,8 @@ A gig worker has availability.
 
 A neighbourhood service provider has expertise.
 
+Licensed roaming vendors and informal businesses are also possible participants. Their service areas may change, so a fixed shop address should not become an automatic requirement. Appropriate identity checks and participation requirements would need to be worked through.
+
 The common problem is often not that the capability does not exist.
 
 It is that the capability is difficult to discover at the moment someone needs it.
@@ -794,33 +638,22 @@ The broader ambition is:
 
 # What success would look like
 
-Success is not necessarily millions of transactions flowing through Makex.
+The central question is whether participation helps people remain viable independent business owners. A shop remaining open through funds from elsewhere is different from a shop supporting its owner and employees through its own activity.
 
-A good version of this system might deliberately own very little.
+We would want to measure additional profitable demand, owner earnings after costs and an allowance for their work, reliance on outside subsidy, and the time required to maintain a presence and respond to enquiries. Sign-ups or transaction volume alone would not establish a livelihood benefit.
 
-Success might instead mean:
+The practical experience matters too:
 
-A merchant with limited digital experience can become discoverable in minutes.
+- A merchant with limited digital experience can become discoverable without creating a complete catalogue.
+- A customer can find and confirm nearby options that previously existed only behind physical shopfronts.
+- A shopkeeper can use their preferred language and respond manually, adopting automation only where it helps.
+- The buyer controls when discovery becomes a live request and when the search extends beyond the local area.
+- Relevant demand reaches merchants without overwhelming them with interruptions.
+- Merchants retain useful customer relationships and can choose providers rather than becoming dependent on one operator.
+- Open commerce interfaces remain available as participants mature.
+- Local inventory has a better chance of finding demand before it is heavily discounted, discarded or indefinitely carried.
 
-A customer can find nearby options that previously existed only behind physical shopfronts.
-
-A shopkeeper can speak in their preferred language instead of learning a catalogue-management system.
-
-An indicative presence can create value before perfect digital inventory exists.
-
-A buyer controls when discovery becomes a live merchant request.
-
-Search expands progressively rather than disturbing an entire market.
-
-A merchant can respond manually today and automate tomorrow.
-
-Existing merchant-customer relationships remain useful rather than being replaced by a platform relationship.
-
-Open commerce standards can be adopted as participants mature.
-
-Local inventory gets another opportunity to find demand.
-
-And the infrastructure connecting those participants remains lightweight enough that it does not need to extract a large share of each transaction merely to survive.
+The hypothesis is that manageable discovery and coordination could support local enterprise. Whether it delivers these outcomes, for which businesses, and at what operating cost must be tested in practice.
 
 ---
 

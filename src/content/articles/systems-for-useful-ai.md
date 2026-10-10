@@ -17,7 +17,7 @@ repeatability, authorization, state, failure handling, resource awareness, obser
 
 At Makex, this technical layer sits underneath our other themes.
 
-Commerce needs agents that can interact without overwhelming merchants.
+Where commerce uses agents, they should interact without overwhelming merchants.
 
 Learning needs adaptive reasoning without losing grounding.
 

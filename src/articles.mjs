@@ -10,20 +10,25 @@ export const articles = [{
   path: '/ideas/commerce-livelihoods/',
   title: 'Commerce & Livelihoods | Makex India',
   description: 'Can local supply become discoverable before a local business becomes fully digital?',
-  referencesChecked: '2026-10-02',
+  referencesChecked: '2026-10-10',
   references: [
     { id: 'ondc-seller', title: 'ONDC — Seller Network Participants', url: 'https://ondc.org/pages/seller-network-participants.html', note: 'Seller participation and catalogue digitization.' },
-    { id: 'ondc-buyer', title: 'ONDC — Buyer Network Participants', url: 'https://ondc.org/pages/buyer-network-participants.html', note: 'Buyer applications, search parsing and matching.' },
+    { id: 'ondc-buyer', title: 'ONDC — Buyer Network Participants', url: 'https://www.ondc.org/pages/buyer-network-participants.html', note: 'Buyer applications, search parsing and matching.' },
     { id: 'ucp', title: 'Universal Commerce Protocol — Core Concepts', url: 'https://ucp.dev/documentation/core-concepts/', note: 'Common interfaces and interoperability for commerce entities.' },
-    { id: 'ucp-google', title: 'Google for Developers — Universal Commerce Protocol', url: 'https://developers.google.com/universal-commerce-protocol', note: 'Agentic commerce integration context.' }
+    { id: 'ucp-google', title: 'Google for Developers — Universal Commerce Protocol', url: 'https://developers.google.com/universal-commerce-protocol', note: 'Agentic commerce integration context.' },
+    { id: 'bbdaily', title: 'BB Daily — Frequently asked questions', url: 'https://www.bbdaily.com/faq.html', note: 'Subscriptions, one-off purchases and next-morning delivery in served locations; an example of planned fulfilment.' },
+    { id: 'bigbasket-slots', title: 'BigBasket — Delivery slots', url: 'https://www.bigbasket.com/fp/web/delivery-slot/', note: 'Published scheduled delivery windows; actual availability depends on location and circumstances.' },
+    { id: 'decathlon-collect', title: 'Decathlon India — Tracking a Reserve and Collect order', url: 'https://www.decathlon.in/support/167/how-can-i-track-my-reserve-and-collect-order', note: 'Readiness confirmation before pickup and a warehouse fallback when shelf stock is unavailable.' }
   ],
   citations: [
     { startsWith: 'ONDC separates buyer-side', references: ['ondc-seller','ondc-buyer'] },
-    { startsWith: 'Similarly, emerging standards such as Universal Commerce Protocol', references: ['ucp','ucp-google'] }
+    { startsWith: 'Similarly, emerging standards such as Universal Commerce Protocol', references: ['ucp','ucp-google'] },
+    { startsWith: 'Existing services illustrate some of these choices.', references: ['bbdaily','bigbasket-slots'] },
+    { startsWith: "Decathlon's Reserve and Collect process", references: ['decathlon-collect'] }
   ],
   diagrams: {
     'from-presence-to-participation': 'participation',
-    'discovery-should-not-become-merchant-spam': 'routing'
+    'a-local-commerce-pod': 'routing'
   }
 }, {
   slug:'learning-capability', path:'/ideas/learning-capability/', title:'Learning & Capability | Makex India',

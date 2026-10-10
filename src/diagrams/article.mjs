@@ -13,34 +13,61 @@ function participation(id,compact) {
 }
 function routing(id,compact) {
   if(compact) {
-    return svg(id,320,824,
-      box(10,14,225,'Buyer intent')+path(id,'M122 66v25')+
-      box(10,94,225,'Local discovery / snapshot')+path(id,'M122 146v25')+
-      box(10,174,225,'Candidate sellers')+path(id,'M122 226v25')+
-      box(10,254,225,'Buyer authorization','diagram-active')+path(id,'M122 306v29')+
-      box(10,338,225,'Preferred sellers')+path(id,'M122 390v45','flow-optional')+label(18,419,'no match')+
-      box(10,438,225,'Nearby high-confidence sellers')+path(id,'M122 490v45','flow-optional')+label(18,519,'no match')+
-      box(10,538,225,'Widen radius / adjacent pod')+
-      path(id,'M235 364h49v304H165','flow-active')+path(id,'M235 464h49','flow-active')+path(id,'M235 564h49','flow-active')+
-      label(242,636,'match')+box(10,642,155,'Offers','diagram-active')+
-      label(10,744,'Widen only when needed,')+label(10,767,'within the buyer’s authorization.'));
+    const steps=[
+      ['1. Buyer → local node','Need, place and timing'],
+      ['2. Local node → buyer','Possible sellers; unconfirmed'],
+      ['3. Buyer → local node','Authorize a bounded enquiry'],
+      ['4. Local node → sellers','Relevant requests only'],
+      ['5a. Sellers → local node','Confirmation and offers'],
+      ['5b. Local node → buyer','Relay responses'],
+      ['6. Buyer ↔ node ↔ seller','Clarify and acknowledge terms']
+    ];
+    return svg(id,320,1330,
+      steps.map(([actors,message],i)=>{
+        const y=12+i*112;
+        return label(12,y+14,actors)+box(12,y+28,296,message,i===2||i===6?'diagram-active':'')+
+          (i<steps.length-1?path(id,`M160 ${y+82}v20`):'');
+      }).join('')+
+      label(12,805,'Live exchanges: limited retention;')+label(12,827,'participants can preserve records.')+
+      label(12,882,'Optional during search:')+label(12,904,'buyer authorizes a wider scope.')+
+      box(12,926,216,'Local node')+
+      path(id,'M88 978v82','flow-optional')+label(12,1008,'Enquiry')+
+      box(12,1064,216,'Neighbouring node')+
+      path(id,'M228 1090h57V952h-55','flow-optional')+
+      label(186,1032,'Replies')+
+      label(12,1164,'After agreement, separately:')+
+      box(12,1188,296,'Pickup or arranged delivery')+
+      label(12,1280,'Manual participation remains valid.')+
+      label(12,1302,'Dashed paths: optional wider search.'));
   }
-  return svg(id,680,800,
-    box(40,16,390,'Buyer intent')+path(id,'M235 68v25')+
-    box(40,96,390,'Local discovery / snapshot')+path(id,'M235 148v25')+
-    box(40,176,390,'Candidate sellers')+path(id,'M235 228v25')+
-    box(40,256,390,'Buyer authorization','diagram-active')+path(id,'M235 308v37')+
-    box(40,348,390,'Preferred sellers')+path(id,'M235 400v53','flow-optional')+label(251,433,'no match')+
-    box(40,456,390,'Nearby high-confidence sellers')+path(id,'M235 508v53','flow-optional')+label(251,541,'no match')+
-    box(40,564,390,'Widen radius / adjacent pod')+
-    path(id,'M430 374h170v320H430','flow-active')+path(id,'M430 482h170','flow-active')+path(id,'M430 590h170','flow-active')+
-    label(464,360,'match')+label(464,468,'match')+label(464,576,'match')+
-    box(40,668,390,'Offers','diagram-active')+label(40,768,'Widen only when needed, within the buyer’s authorization.'));
+  return svg(id,680,1030,
+    box(10,20,160,'Buyer / optional agent')+
+    box(245,20,190,'Local commerce node','diagram-active')+
+    box(510,20,160,'Local businesses')+
+    label(10,102,'Describe the need')+label(245,102,'Match available presence')+label(510,102,'Manual or automated')+
+    `<path class="diagram-line" d="M90 120v495M340 120v495M590 120v495"/>`+
+    path(id,'M90 165H338')+label(106,150,'1. Need, place and timing')+
+    path(id,'M340 235H92')+label(106,206,'2. Possible sellers')+label(106,226,'Availability unconfirmed')+
+    path(id,'M90 305H338','flow-active')+label(106,290,'3. Authorize contact / scope')+
+    path(id,'M340 375H588')+label(353,360,'4. Relevant enquiries')+
+    path(id,'M590 435H342')+label(353,420,'5a. Confirmation and offers')+
+    path(id,'M340 485H92')+label(106,470,'5b. Relay responses')+
+    label(106,532,'6. Clarify and agree terms')+label(353,532,'Relay / acknowledge')+
+    path(id,'M90 555H338','flow-active')+path(id,'M340 555H588','flow-active')+
+    path(id,'M590 590H342','flow-active')+path(id,'M340 590H92','flow-active')+
+    label(35,659,'Live exchanges: limited retention; participants can preserve records.')+
+    label(35,718,'Optional during search: buyer authorizes a wider scope.')+
+    box(35,754,190,'Local node')+box(455,754,190,'Neighbouring node')+
+    path(id,'M225 768H453','flow-optional')+label(255,752,'Authorized enquiry')+
+    path(id,'M455 794H227','flow-optional')+label(313,820,'Replies')+
+    label(35,876,'After agreement, separately:')+
+    box(35,900,610,'Pickup or separately arranged delivery')+
+    label(35,1000,'Dashed paths show optional wider search, not an automatic next step.'));
 }
 const diagrams = {
   ...researchDiagrams,
   participation: { title:'Progressive digital participation', caption:'A merchant can stop wherever value is sufficient.', description:'Optional stages connect offline business, basic presence, an indicative snapshot, buyer-authorized live enquiry, manual or rules-based or merchant-agent response, and an open commerce interface. No stage requires adopting the next.', render:participation },
-  routing: { title:'Progressive demand routing', caption:'Expand discovery only as far as necessary to fulfil the intent.', description:'Buyer intent leads to local discovery and candidate sellers. Buyer authorization precedes live requests. Preferred sellers are tried first. If there is no match, the search can widen to nearby high-confidence sellers and then a wider radius or adjacent pod, within that authorization. A match at any stage can produce offers.', render:routing }
+  routing: { title:'From a local enquiry to an agreed next step', caption:'Proposed flow. Live enquiries require buyer authorization; pickup or delivery is arranged separately.', description:'1. The buyer sends a need, location and timing to the local node. 2. The node returns possible sellers from basic or indicative presence without contacting them; availability is unconfirmed. 3. The buyer authorizes selected sellers or a bounded search. 4. Relevant enquiries reach merchants within that scope and their preferences; manual response remains valid. 5a. Sellers return confirmation, supporting evidence and offers to the node. 5b. The node relays those responses to the buyer. 6. Buyer and seller clarify and acknowledge terms through the channel. Live exchanges would have limited retention and participant-exportable records. Optional during search: only with buyer authorization, a local node sends an enquiry to a neighbouring node and receives replies. This is not an automatic step after agreement. Pickup or separately arranged delivery follows any agreement outside the discovery responsibility. The complete system remains exploratory.', render:routing }
 };
 export function articleDiagram(key) {
   const d=diagrams[key];

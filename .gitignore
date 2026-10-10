@@ -1,3 +1,4 @@
 node_modules/
 .qa/
+01_temp/
 *.log
